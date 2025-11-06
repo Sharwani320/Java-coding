@@ -1,0 +1,17 @@
+public class FirstNonRepeatingChar {
+    public static char firstNonRepeat(String str) {
+        int[] freq = new int[256];
+        for (char c : str.toCharArray())
+            freq[c]++;
+
+        for (char c : str.toCharArray())
+            if (freq[c] == 1)
+                return c;
+
+        return '_';
+    }
+
+    public static void main(String[] args) {
+        System.out.println(firstNonRepeat("swiss")); // w
+    }
+}
